@@ -1,0 +1,13 @@
+h1 {
+    color: red;
+    background-color: #f4b7b7;
+    font-size: 55px;
+  }
+p {
+      color: blue;
+      font-size: 10px;
+  }
+a {
+      color: green;
+      font-size: 60px;
+  }
