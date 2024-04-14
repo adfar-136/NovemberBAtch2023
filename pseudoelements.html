@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para::first-line{
+            font-size: 45px;
+            color: red;
+        }
+        h2::first-letter{
+            color: blueviolet;
+            font-size: xx-large;
+        }
+        p.para::first-letter{
+             color: blue;
+             background-color: red;
+        } 
+        b::before{
+            content:"Hello "
+        }
+        b::after{
+            content: url('./images/cat.jpg');
+        }
+        ul ::marker{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+    <ol>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ol>
+    <b>Adfar</b>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla alias aspernatur fugit cumque eum, soluta a maiores aperiam perferendis suscipit excepturi quas! Commodi recusandae sit, atque alias corrupti illum in, odio labore deserunt incidunt explicabo quaerat est quibusdam quo non perspiciatis adipisci qui! Tenetur, expedita tempora sequi dolore iste ullam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla alias aspernatur fugit cumque eum, soluta a maiores aperiam perferendis suscipit excepturi quas! Commodi recusandae sit, atque alias corrupti illum in, odio labore deserunt incidunt explicabo quaerat est quibusdam quo non perspiciatis adipisci qui! Tenetur, expedita tempora sequi dolore iste ullam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla alias aspernatur fugit cumque eum, soluta a maiores aperiam perferendis suscipit excepturi quas! Commodi recusandae sit, atque alias corrupti illum in, odio labore deserunt incidunt explicabo quaerat est quibusdam quo non perspiciatis adipisci qui! Tenetur, expedita tempora sequi dolore iste ullam.</p>
+    <h1 class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit dolorum dolor nemo tempora reiciendis, provident aut deserunt in voluptatum neque ex omnis veritatis dolore tenetur laudantium repudiandae corrupti saepe impedit odio ipsa corporis? Minima recusandae labore rerum, amet excepturi deserunt?</h1>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga voluptatibus ipsam nesciunt vitae, sit accusamus eveniet ullam. Maxime amet magni facere reiciendis rem blanditiis ut nisi fuga labore, id error!</h2>
+</body>
+</html>

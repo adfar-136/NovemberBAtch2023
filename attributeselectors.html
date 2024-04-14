@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1[title]{
+            background-color: aqua;
+        }
+        a[target]{
+            background-color: blueviolet;
+        }
+        h1[title="First heading"]{
+            background-color: burlywood;
+        }
+        p[class="para"]::first-letter{
+            color: red;
+        }
+        h1[title~="First"]{
+            border: 2px solid red;
+        }
+        h1[title|="Last"]{
+          border: 5px dotted blue;
+        }
+        h1[title ^= "main"]{
+            background-color: chartreuse;
+        }
+        h1[title $= "ar"]{
+            background-color: rgb(185, 13, 159);
+        }
+        h1[title *= "main"]{
+            background-color: rgb(245, 53, 27);
+        }
+       /* img[src="./hgnfghf.jpg"]{
+
+        }
+        a[href="httpswww.gfggjfrhfdg.com"]{
+
+        }
+        ul[id="nfdtftf"]{
+
+        }*/
+    </style>
+</head>
+<body>
+    <h1 title="First heading adfar">Create New Post</h1>
+    <h1 title="First heading">Hello Welcome</h1>
+    <h1 title="Last-heading deffar">Kuch Bhi</h1>
+    <h1 title="hgdfggmaingfhg">Kuch Bhi1</h1>
+    <h1 title="container">Kuch Bhi2</h1>
+    <a href="https://www.google.com" target="_blank">Google Link</a>
+    <a href="https://www.amazon.in" target="_parent">Amazon</a>
+    <a href="https://www.fb.com">Facebbok</a>
+    <p class="para">My name is KHan</p>
+    <p>My name is Singh</p>
+</body>
+</html>
