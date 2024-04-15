@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    
+    <!-- Title: Sets the title of the web page -->
+    <title>Your Page Title</title>
+    
+    <!-- Meta Tags: Charset, Viewport, Description -->
+    <meta charset="UTF-8" /> <!-- Character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive design -->
+    <meta name="description" content="Description of the page" /> <!-- Page description -->
+</head>
+<body>
+    <!-- Body: Main content container -->
+    
+    <!-- P tag: Defines a paragraph -->
+    <p>This is a paragraph.</p>
+    
+    <!-- Div & Span: Container and inline styling/grouping -->
+    <div>This is a div container.</div>
+    <span>This is inline text.</span>
+    
+    <!-- Media: Images, Audio, Video -->
+    
+    <!-- Adding Images: img tag with src and alt attributes -->
+    <img src="image.jpg" alt="Image description" />
+    
+    <!-- Adding Audio: audio tag with source -->
+    <audio controls autoplay loop muted>
+        <source src="audio.mp3" type="audio/mpeg" />
+    </audio>
+    <!-- Attributes: 
+         - controls: Display media controls
+         - autoplay: Automatically play audio
+         - loop: Loop the audio
+         - muted: Mute the audio -->
+    
+    <!-- Adding Video: video tag with source -->
+    <video controls autoplay loop muted>
+        <source src="video.mp4" type="video/mp4" />
+    </video>
+    <!-- Attributes: 
+         - controls: Display media controls
+         - autoplay: Automatically play video
+         - loop: Loop the video
+         - muted: Mute the video -->
+    
+    <!-- Iframe: Embedding external content -->
+    <iframe src="https://www.example.com" width="600" height="400"></iframe>
+    
+    <!-- Ordered List (OL): Numbered list -->
+    <ol start="1" type="1">
+        <!-- Attributes: 
+             - start: Starting number
+             - type: Numbering type (1, A, a, I, i) -->
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ol>
+    
+    <!-- Unordered List (UL): Bullet points -->
+    <ul type="disc">
+        <!-- Attributes: 
+             - type: Bullet style (disc, circle, square) -->
+        <li>Item A</li>
+        <li>Item B</li>
+    </ul>
+    
+    <!-- Description List (DL): Term-description pairs -->
+    <dl>
+        <dt>Term 1</dt>
+        <dd>Description 1</dd>
+    </dl>
+    
+    <!-- HTML Tables: Tr, Td, Tbody, Thead -->
+    <table>
+        <!-- Thead: Table header -->
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+            </tr>
+        </thead>
+        
+        <!-- Tbody: Table body -->
+        <tbody>
+            <!-- Tr: Table row -->
+            <tr>
+                <!-- Td: Table data/cell -->
+                <td>Data 1</td>
+                <td>Data 2</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- HTML Forms: Form tag, Input tag, Text Input, Label -->
+    
+    <!-- Form tag: Form container -->
+    <form>
+        <!-- Label: Describes input field -->
+        <label for="username">Username:</label>
+        
+        <!-- Input tag: Text Input -->
+        <input type="text" id="username" name="username" />
+        
+        <!-- Input tag: Submit button -->
+        <input type="submit" value="Submit" />
+    <!-- Radio Buttons -->
+    <input type="radio" name="gender" value="male" checked />
+    <label>Male</label>
+    <input type="radio" name="gender" value="female" />
+    <label>Female</label>
+    <!-- Attributes: 
+         - type: Specifies input type as radio
+         - name: Groups radio buttons
+         - value: Value of the radio button
+         - checked: Pre-selects the radio button -->
+
+    <!-- Checkbox -->
+    <input type="checkbox" id="checkbox1" name="checkbox1" checked />
+    <label for="checkbox1">Checkbox 1</label>
+    <!-- Attributes: 
+         - type: Specifies input type as checkbox
+         - id: Unique identifier
+         - name: Groups checkboxes
+         - checked: Pre-selects the checkbox -->
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit" />
+    <!-- Attributes: 
+         - type: Specifies input type as submit
+         - value: Text displayed on the button -->
+
+    <!-- Form Attributes -->
+    <form action="/submit" method="post" target="_blank">
+        <!-- Action: URL to submit form data -->
+        <!-- Target: Where to display the response (e.g., _blank for new window/tab) -->
+        <!-- Method: HTTP method to use for form submission (e.g., post, get) -->
+
+        <!-- Form Elements -->
+
+        <!-- Text Area -->
+        <textarea name="message" rows="4" cols="50"></textarea>
+        <!-- Attributes: 
+             - name: Specifies input name for form submission
+             - rows: Number of visible text lines
+             - cols: Number of visible text columns -->
+
+        <!-- Select Dropdown -->
+        <select name="dropdown">
+            <!-- Option Group -->
+            <optgroup label="Group 1">
+                <!-- Option Tag -->
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+            </optgroup>
+        </select>
+        <!-- Attributes: 
+             - name: Specifies input name for form submission -->
+
+        <!-- Buttons -->
+        <button type="button">Click Me</button>
+        <!-- Attributes: 
+             - type: Specifies button type (submit, reset, button) -->
+
+        <!-- Fieldset -->
+        <fieldset>
+            <legend>Legend</legend>
+            <!-- Input Types -->
+
+            <!-- Text Input -->
+            <input type="text" placeholder="Text Input" />
+            <!-- Input Type Email -->
+            <input type="email" placeholder="Email Input" />
+            <!-- Attributes: 
+                 - type: Specifies input type
+                 - placeholder: Placeholder text -->
+
+        </fieldset>
+
+        <!-- Output Tag -->
+        <output name="result"></output>
+        <!-- Attributes: 
+             - name: Specifies output name for form submission -->
+    </form>
+      <!-- Section: Represents a standalone section of content -->
+    <section>
+        <h1>Section Title</h1>
+        <p>Section content goes here.</p>
+    </section>
+
+    <!-- Aside: Represents content that is tangentially related to the main content -->
+    <aside>
+        <h2>Aside Title</h2>
+        <p>Aside content goes here.</p>
+    </aside>
+
+    <!-- Footer: Represents the footer of a document or section -->
+    <footer>
+        <p>Copyright © 2024 Example Company. All rights reserved.</p>
+    </footer>
+
+    <!-- Semantic HTML -->
+
+    <!-- Article: Represents a self-contained composition in a document -->
+    <article>
+        <h1>Article Title</h1>
+        <p>Article content goes here.</p>
+    </article>
+
+    <!-- Figcaption: Represents a caption or legend for a figure -->
+    <figure>
+        <img src="image.jpg" alt="Description" />
+        <figcaption>Image Caption</figcaption>
+    </figure>
+
+    <!-- Figure: Represents content like images, illustrations, diagrams, etc. -->
+    <figure>
+        <img src="diagram.jpg" alt="Diagram Description" />
+        <figcaption>Diagram Caption</figcaption>
+    </figure>
+
+    <!-- Summary: Represents a summary, caption, or legend for details in a <details> element -->
+    <details>
+        <summary>Summary</summary>
+        <p>Details content goes here.</p>
+    </details>
+
+    <!-- Main: Represents the main content of a document -->
+    <main>
+        <h1>Main Content</h1>
+        <p>Main content goes here.</p>
+    </main>
+
+    <!-- Mark: Represents highlighted text -->
+    <p>This is <mark>highlighted</mark> text.</p>
+
+
+</body>
+</html>
