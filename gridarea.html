@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            background-color: burlywood;
+            padding: 20px;
+            height: 250px;
+            width: 900px;
+            gap: 20px;
+            display: grid;
+            grid-template-areas: 
+            "header header header header header"
+            "sidenav info info sidenav2 sidenav2"
+            "sidenav footer footer footer footer";
+        }
+        .container > div{
+            background-color: gray;
+            padding: 20px;
+            text-align: center;
+        }
+        .item1{
+            grid-area: header;
+        }
+        .item2{
+            grid-area: sidenav;
+        }
+        .item3{
+            grid-area: info;
+        }
+        .item4{
+            grid-area: sidenav2;
+        }
+        .item5{
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">Header</div>
+        <div class="item2">SideNav1</div>
+        <div class="item3"> adfar</div>
+        <div class="item4">SideNav2</div>
+        <div class="item5">footer</div>
+    </div>
+</body>
+</html>
