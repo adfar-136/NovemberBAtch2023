@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            height: 500px;
+            width: 500px;
+            border: 2px solid red;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+        }
+        .outer > div{
+            border: 2px solid green;
+        }
+        .outer .main{
+            flex-basis: 75%;
+            display: flex;
+            padding: 2px;
+            gap: 6px;
+        }
+        .main .first{
+            border: 2px solid blue;
+        }
+        .main .second{
+            border: 2px solid blue;
+            flex-basis: 80%;
+            display: flex;
+            flex-direction: column;
+            padding: 3px;
+            gap: 5px;
+        }
+        .second .top{
+            border: 2px solid brown;
+            flex-basis:10% ;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .item1, .item2,.item3{
+            border: 2px solid rgb(9, 241, 241);
+            background-color: yellow;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .second  .bottom{
+            border: 2px solid brown;
+            flex-basis: 80%;
+        }
+       .outer .header{
+        flex-basis: 10%;
+       }
+       .outer .footer{
+        flex-basis: 10%;
+       }
+    </style>
+</head>
+<body>
+    <div class="outer">
+      <div class="header">a</div>
+      <div class="main">
+        <div class="first">First Content.</div>
+        <div class="second">
+            <div class="top">
+                <div class="item1">Item1.</div>
+                <div class="item2">Item2.</div>
+                <div class="item3">Item3.</div>
+                <div class="item4">Item4.</div>
+            </div>
+            <div class="bottom">bb</div>
+        </div>
+      </div>
+      <div class="footer">c</div>
+    </div>
+</body>
+</html>

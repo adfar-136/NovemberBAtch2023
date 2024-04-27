@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <style>
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        p{
+            font-size: 50px;
+            color: red;
+            background-color: burlywood;
+        }
+
+        .main{
+            background-color: burlywood;
+            display: flex;
+        }
+        .main div{
+            width: 200px;
+            height: 100px;
+            background-color: aqua;
+            margin: 5px;
+        }
+        @media only screen and (max-width:400px){
+           p{
+            font-size: 20px;
+            color: blue;
+            background-color: aqua;
+           }
+           .main{
+            display: flex;
+           
+            flex-direction: column;
+            gap: 4px;
+           }
+           .main div{
+             margin: 5px;
+             border: 1px solid red;
+           }
+        }
+        @media only screen and (min-width:401px) and (max-width:700px){
+            p{
+                background-color: red;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/catt.png" alt="">
+    <div class="main">
+        <div class="item1"></div>
+        <div class="item1"></div>
+        <div class="item1"></div>
+        <div class="item1"></div>
+        <div class="item1"></div>
+        <div class="item1"></div>
+        <div class="item1"></div>
+        <div class="item1"></div>
+
+    </div>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores pariatur ducimus, eveniet consectetur veritatis nisi maiores nulla laboriosam! Quo officiis amet perspiciatis expedita tempora voluptatibus animi mollitia ad consequatur nesciunt! Incidunt cupiditate quasi vero eos asperiores a temporibus recusandae sint at, rerum deleniti provident ab?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi iste suscipit aliquid. Amet veritatis assumenda cum? Obcaecati totam ullam molestias commodi qui nulla porro reiciendis at, dignissimos ut! Consectetur molestiae officia dolore corporis quod cum sunt voluptas pariatur, quae, at obcaecati nemo totam, ipsam atque id sit adipisci dolor commodi?</p>
+     <p>❤️❤️❤️❤️❤️❤️❤️😒😍🤣</p>
+</body>
+</html>
