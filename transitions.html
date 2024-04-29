@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            border: 5px solid red;
+            padding: 20px;
+           
+           /*-- transition: width 2s,height 2s,background-color 2s,transform 2s;
+             transition-delay: 1s; 
+            transition-timing-function: ease-in-out;*/
+        }
+        .main{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            border: 5px solid red;
+            padding: 20px;
+            box-sizing: content-box;
+        }
+       /*-- .container:hover{
+            background-color: red;
+            width: 350px;
+            height: 350px;
+            transform: rotate(110deg);
+        }*/
+        .para{
+            border: 2px solid red;
+            width: 70px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow:ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <p class="para">Adfar is a very good mern instructor. We will nw start javascript in two days</p>
+    <h1>Css Transitions</h1>
+    <div class="container">
+        adfar rasheed
+    </div>
+    <div class="main">
+        <p style="border: 2px solid red;">Adfar Rasheed</p>
+    </div>
+    
+</body>
+</html>
