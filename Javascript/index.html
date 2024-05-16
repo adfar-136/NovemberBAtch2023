@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Adfar Rasheed</h1>
-    <script src="./scope.js"></script>
+    <h1 class="main">Adfar Rasheed</h1>
+    <p class="main"></p>
+    <div class="main"></div>
+    <div class="main"></div>
+    <div class="main"></div>
+    <div class="main"></div>
+    <div class="main"></div>
+    <div class="main"></div>
+    <div class="main"></div>
+    <div class="main"></div>
+    <!-- <h1 id="heading" title="hello"></h1>
+    <p id="para">param hello</p>
+    <button onclick="myfun()">Change</button>
+    <button onclick="fun()">Add</button> -->
+    <script>
+        let element = document.getElementsByClassName("main");
+        element[0].style.color= "red";
+        for(let i =0;i<element.length;i++){
+            element[i].style.color="red";
+            element[i].innerText = "Welcome to my youtube channel"
+
+        }
+        
+        for(let i of element){
+           i.style.color="blue";
+        }
+        /*let ele2 = document.getElementById("para");
+        const element =   document.getElementById("heading");
+        function myfun(){
+            ele2.innerHTML = "hello";
+        }
+        function fun(){
+            element.innerText= "Adfar Rasheed"
+        }
+     
+     console.log(element);
+     console.log(typeof(element));
+     */
+    </script>
 </body>
 </html>

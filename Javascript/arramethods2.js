@@ -1,6 +1,7 @@
-let arr = [1,23,31,93,82.4,6.1,1.4,-400,-20.5];
+let arr = [1,23,31,93,82.4,6.1,93,93,93,1.4,-400,-20.5];
 let ele = arr.includes(2673)
-console.log(ele)
+let elee = arr.lastIndexOf(9565543553)
+console.log(elee)
 
 // let arr2 = ['za',"rsa","edf","ysd","wd","csd"]
 // let arrsort = arr.sort((a,b)=>{
