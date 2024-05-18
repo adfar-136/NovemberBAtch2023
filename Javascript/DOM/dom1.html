@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading" title="hello"></h1>
+    <p class="main">Adfar</p>
+    <h4 class="main"></h4>
+    <h6 class="main"></h6>
+    <form>
+        <input type="text" name="fname">
+        <input type="text" name="fname">
+        <input type="text" name="email">
+    </form>
+    <ul class="main">
+           
+    </ul>
+    <button onclick="myfun()">Click Me</button>
+    <script>
+        let arr = [59,3,4,5];
+        console.log(arr[1]);
+
+        let ele2 = document.getElementsByTagName("p");
+        let ele3 = document.getElementsByClassName("main");
+        let ele4 = document.getElementsByName("fname");
+        console.log(ele4);
+        console.log(ele3);
+
+        for(let i =0;i<ele2.length;i++){
+            ele2[i].innerHTML="Hello";
+            ele2[i].style.fontSize = arr[0]+"px"
+        }
+        for(let i =0;i<ele3.length;i++){
+            ele3[i].innerHTML="Hello";
+            ele3[i].style.fontSize = arr[0]+"px"
+        }
+        function myfun() {
+          let element = document.getElementById("heading")
+          element.innerHTML="<span>Adfsr</span>"
+          element.style.color = "red";
+        }
+    </script>
+</body>
+</html>

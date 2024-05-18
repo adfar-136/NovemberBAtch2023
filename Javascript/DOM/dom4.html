@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1,button{
+            background-color: aqua;
+            display: inline-block;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading" title="hello">Adfar Rasheed</h1>
+    <p id="hello">adfar</p>
+    <h4 class="heading">hello welome back</h4>
+    <button onclick="myfunction()">Blue</button>
+    <button onclick="myfunc()">Red</button>
+    <button onclick="myfunctionn()">Toggle</button>
+    <button onclick="myfun()">Addclass</button>
+    <script>
+        const element = document.querySelector("p")
+        function myfun(){
+            element.removeAttribute("id")
+             element.setAttribute("class","blue");
+             element.setAttribute("title","yeh mera para tag hain")
+        }
+       function myfunction(){
+        let element = document.querySelector("h4").classList;
+        element.add("blue")
+        console.log(element);
+       }
+       function myfunc(){
+        let element = document.querySelector("h4").classList;
+        element.remove("blue")
+        element.add("red")
+       }
+       function myfunctionn(){
+        let element = document.querySelector("h4").classList;
+        element.toggle("blue");
+        console.log(element);
+       }
+    </script>
+</body>
+</html>

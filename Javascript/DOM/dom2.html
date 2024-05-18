@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo Application</h1>
+    <div id="mai">
+
+    </div>
+    <input type="text" id="infield" placeholder="Add an Item">
+    <button onclick="myfunction()">Add</button>
+  
+    <ul id="list">
+       
+    </ul>
+    <script>
+        let inputfield = document.getElementById("infield")
+        let ulist = document.getElementById("list")
+        let element = document.getElementById("mai")
+        console.log(element);
+        function myfunction(){
+           /* let heading1 = document.createElement("h1")
+            heading1.innerHTML = "Welcome to my webpage";
+            heading1.style.fontSize="30px"
+            heading1.style.backgroundColor="blue";
+            element.appendChild(heading1)*/
+            let lii = document.createElement("li")
+            lii.innerHTML = inputfield.value;
+            ulist.appendChild(lii)
+            const removebtn = document.createElement("button");
+            removebtn.innerHTML = "Remove";
+            removebtn.style.backgroundColor = "red";
+            removebtn.style.color = "white";
+            removebtn.style.fontSize = "20px";
+            removebtn.onclick =()=>{
+              ulist.removeChild(lii)
+            }
+            lii.appendChild(removebtn)
+
+        }
+        
+    </script>
+</body>
+</html>
