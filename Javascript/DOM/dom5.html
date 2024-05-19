@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>React</li>
+    </ol>
+    <button onclick="myfun()">Remove</button>
+    <button onclick="myfunction()">Replace</button>
+    <script>
+        function myfunction() {
+            var list = document.getElementById("list").children[0];
+           const newnode = document.createTextNode("Samkit Jain")
+            list.replaceChild(newnode,list.childNodes[0])
+        }
+        function myfun() {
+            let list = document.getElementById("list");
+            /*if(list.hasChildNodes()){
+                list.removeChild(list.firstChild);
+            }
+            while(list.hasChildNodes()){
+                list.removeChild(list.firstChild);
+            }*/
+            if(list.children[2]){
+              list.removeChild(list.children[2])
+            }
+        }
+    </script>
+</body>
+</html>

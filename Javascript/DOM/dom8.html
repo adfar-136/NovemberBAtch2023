@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: blue;
+            font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adfar Rasheed</h1>
+    <button id="btn">Click me</button>
+   <script>
+     let element = document.getElementById("btn")
+     element.addEventListener("click",()=>{
+        alert('hello adfar')
+     })
+     let ele = document.querySelector("h1")
+     ele.addEventListener("mouseover",()=>{
+        ele.style.backgroundColor = "red"
+        ele.style.fontSize = "10px"
+     })
+   </script>
+</body>
+</html>
