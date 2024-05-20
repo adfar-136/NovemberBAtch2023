@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form onsubmit="alert('form submitted')">
+        <input type="text" onkeyup="alert('key pressed')" onchange="myfun()">
+        <input type="submit" value="login">
+    </form> -->
+    <h1>Adfar Rasheed</h1>
+    <input type="password" id="pass">
+    <button>showpassword</button>
+    
+    <script>
+       let ele3 = document.querySelector("input")
+       let ele4 = document.querySelector("button");
+       ele4.addEventListener("mouseover", function(){
+        ele3.type = "text"
+       })
+       ele4.addEventListener("mouseout",()=>{
+        ele3.type = "password"
+       })
+        //function myfun() {
+         //   let element = document.querySelector("input")
+          //  element.style.backgroundColor="red"
+       // }
+      /* let element = document.querySelector("h1")
+       element.addEventListener("click",()=>{
+        element.style.color="red"
+       })
+       let ele2 = document.querySelector("input")
+       ele2.addEventListener("focus",()=>{
+        ele2.style.backgroundColor="red"
+       })*/
+       
+    </script>
+</body>
+</html>

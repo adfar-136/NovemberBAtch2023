@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="container">
+        <h1 id="heading" class="para">dfgdf</h1>
+
+    </div>
+    <div id="main">
+        <h1 id="heading" class="para">dfgdf</h1>
+        <h1 id="heading" class="para">hejeejje</h1>
+        <p class="para">3rterr</p>
+        <img class="para" src="" alt="">
+        <button onclick="myfunction()">add content to h1</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ducimus labore maiores fugiat quod quisquam magni aut, beatae quibusdam quidem.</p>
+    </div>
+    <div class="header" id="r">
+
+    </div> -->
+    <ul id="list">
+      <li>HTML</li>
+      <li>css</li>
+      <li>js</li>
+      <li>react</li>
+      <li>node</li>
+    </ul>
+    <button onclick="myfun()">Remove </button>
+    <button>Replace</button>
+    <script>
+        const ulist = document.getElementById('list');
+        function myfun(){
+            ulist.removeChild(ulist.childNodes[2]);
+        }
+       /* let element = document.getElementsByClassName("header")
+        element[0].removeAttribute("id")
+       let headingtag = document.createElement("h1")
+       headingtag.innerHTML = "hello"
+       headingtag.style.backgroundColor="aqua";
+       headingtag.style.padding="20px"
+       headingtag.setAttribute("title","I am heading");
+      
+       element[0].appendChild(headingtag)
+        //let element = document.getElementById("list")
+        //const li = document.createElement("li")
+        //li.innerHTML="Item stored";
+        //element.appendChild(li);
+        //const element = document.querySelector("h1:nth-child(2)")
+        //console.log(element);
+        
+   //const element = document.getElementById("container");
+   //element.innerHTML = "<h1>Adfar Rasheed</h1> <b>hello</b>"
+  // const element = document.getElementsByTagName("h1");
+  //const element = document.getElementsByClassName("para")
+   /*console.log(element);
+   function myfunction(){
+       for(let i =0;i<element.length;i++){
+        element[i].style.backgroundColor="red"
+       }
+   }
+    */
+    </script>
+</body>
+</html>
