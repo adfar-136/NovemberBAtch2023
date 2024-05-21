@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function validateDate() {
+            event.preventDefault()
+            let input = document.getElementById("date").value;
+            let pattern = /\d{2}-\d{2}-\d{4}/g
+            if(input.match(pattern)){
+                document.getElementById("error").textContent=""
+                return
+            } else {
+                document.getElementById("error").textContent="Invalid Date format"
+                return
+            }
+        }
+    </script>
+    <h1>Pattern testing</h1>
+    <form onsubmit="validateDate()">
+        <label for="">Enter date in dd-mm-yyyy</label>
+        <input type="text" name="date" id="date" required>
+        <span id="error"></span>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
