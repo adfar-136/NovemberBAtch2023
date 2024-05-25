@@ -1,4 +1,4 @@
-// const user1 = {
+// //const user1 = {
 //     firstName :"Adfar",
 // //     lastName:"Rashid",
 // //     age:26,
@@ -28,7 +28,7 @@
 // }
 // const user1 = createUser("Adfar","Rashid",27)
 // const user2 = createUser("Mithun","Kumar",28)
-//Constructor functions
+
 // function getAgeYear(){
 //     return new Date().getFullYear() - this.age
 // }
@@ -51,15 +51,61 @@
 // const user2 = createUser("Mithun","Kumar",28)
 
 
+// let element = document.getElementById("heading")
 
-function createUser(firstName,lastName,age){
-     this.firstName = firstName;
-     this.lastName = lastName;
-     this.age=age;
+// function createUser(firstName,lastName,age){
+//      this.firstName = firstName;
+//      this.lastName = lastName;
+//      this.age=age;
+// }
+// createUser.prototype.getAgeYear = function(){
+//      return new Date().getFullYear() - this.age 
+// }
+// createUser.prototype.getFullname = function(){
+//      return this.firstName + " " + this.lastName
+// }
+// const user1 = new createUser("Adfar","Rashid",27);
+// const user2 = new createUser("Mithun","Kumar",28);
+
+class createUser{
+     #age
+     #firstName
+     constructor(firstName,lastName,age){
+         this.#firstName = firstName
+         this.lastName=lastName
+         this.#age=age
+     }
+     #n="hello";
+    #getFullName(){
+     console.log(this.getAgeYear())
+     return this.#firstName + " " + this.lastName
+    }
+    getAgeYear(){
+     return new Date().getFullYear() - this.#age 
+    }
 }
 
 const user1 = new createUser("Adfar","Rashid",27);
 const user2 = new createUser("Mithun","Kumar",28);
+
+// console.log(user1.#n)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
