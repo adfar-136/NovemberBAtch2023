@@ -80,6 +80,9 @@ class createUser{
      console.log(this.getAgeYear())
      return this.#firstName + " " + this.lastName
     }
+    static adfar(){
+        console.log("adfar rasssss")
+    }
     getAgeYear(){
      return new Date().getFullYear() - this.#age 
     }
@@ -88,7 +91,7 @@ class createUser{
 const user1 = new createUser("Adfar","Rashid",27);
 const user2 = new createUser("Mithun","Kumar",28);
 
-// console.log(user1.#n)
+console.log(createUser.adfar())
 
 
 
