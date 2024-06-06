@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myBtn">click ME</button>
+    <script>
+        function throttle(func,delay){
+            let lastCall= 0;
+            return function(){
+                const now = Date.now()
+                if(now-lastCall >= delay){
+                    lastCall = now;
+                    func()
+                }
+            }
+        }
+        function display(){
+            console.log("Adfar");
+        }
+        let btn = document.getElementById("myBtn");
+
+        btn.addEventListener("click",throttle(display,2000))
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputt">
+    <input type="email" id="inputtt">
+    <button id="btn">Save to ls</button>
+    <button id="removeBtn">Remove Name from LS</button>
+    <button id="readBtn">Read Name</button>
+    <button id="allBtn">Remove all</button>
+
+    <script>
+        document.getElementById("allBtn").addEventListener("click",()=>{
+            localStorage.clear()
+        })
+        document.getElementById("btn").addEventListener("click",save)
+        function save(){
+            let element1 = document.getElementById("inputt")
+            let element2 = document.getElementById("inputtt")
+        localStorage.setItem("name",element1.value)
+        localStorage.setItem("email",element2.value)
+        }
+       document.getElementById("removeBtn").addEventListener("click",()=>{
+        localStorage.removeItem("name")
+       })
+       document.getElementById("readBtn").addEventListener("click",()=>{
+        let data = localStorage.getItem("name")
+        console.log(data);
+       })
+       
+    </script>
+</body>
+</html>
