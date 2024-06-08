@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <div onscroll="myFun()" style="height: 200px;width:300px;border:2px solid red;overflow:auto;">
+        <div id="main" style="width:250px;height:150px;border:2px solid;padding:40px">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quod qui nemo cupiditate aliquid! Id, voluptate doloremque reprehenderit numquam veritatis laboriosam, temporibus quas sapiente quae dolor omnis assumenda harum neque nostrum modi ex delectus provident! Voluptate, cupiditate harum saepe nulla nam cum sed asperiores eligendi esse quasi quam provident eaque repellat similique fuga temporibus officiis animi magni nisi placeat nostrum ipsam, sequi voluptatum illo? Animi aperiam sunt saepe vel beatae exercitationem nesciunt soluta quos velit iusto, numquam suscipit non tempora dolore cupiditate ab repellendus tenetur odio necessitatibus autem eius? Beatae sit ipsa aut consequuntur nam, at voluptatem corporis repellat! Tempore non vitae eveniet ratione officiis. Ea voluptate, molestias officiis quo soluta dolorem cupiditate recusandae, cumque in corrupti molestiae dicta quisquam quas reiciendis ut, qui ullam distinctio culpa praesentium? Soluta optio quaerat, praesentium reprehenderit pariatur quidem officia non earum. Provident saepe veritatis, delectus mollitia hic ab quae odit incidunt id corrupti vel modi, fuga reiciendis perspiciatis temporibus recusandae ipsa voluptates veniam sed est optio asperiores! Veniam non totam sed sequi quidem id cupiditate cum. Tempore numquam sapiente recusandae assumenda inventore facere expedita reprehenderit, minima debitis iste ducimus quidem quo aperiam consectetur laudantium ipsam nulla obcaecati architecto? Delectus rem vero debitis voluptates!
+        </div>
+        
+    </div>
+    <p id="para"></p>
+    <script>
+        function myFun(){
+            let element = document.getElementById("main");
+            let rect = element.getBoundingClientRect();
+            console.log(rect);
+            document.getElementById("para").innerHTML = 
+                `left : ${rect.left} right: ${rect.right} x: ${rect.x} y:${rect.y}`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+        }
+        #main{
+            width: 15px;
+            height: 15px;
+            background :linear-gradient(#df4617,#0e29d9);
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+    <script>
+        document.addEventListener("mousemove",(e)=>{
+            let element = document.getElementById("main");
+            element.style.left =`${e.clientX}px`;
+            element.style.top=`${e.clientY}px`
+        })
+    </script>
+</body>
+</html>

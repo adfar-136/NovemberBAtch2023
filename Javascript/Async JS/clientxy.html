@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para" onmousemove="showposition()">Lorem ipsum
+         dolor sit amet consectetur adipisicing elit. 
+         Repellat aut voluptates officia! Reiciendis 
+         repellat mollitia fugit impedit, assumenda 
+         placeat accusamus?</p>
+     <script>
+        function showposition(){
+            var x = event.clientX;
+           
+            var y =event.clientY;
+            console.log(x,y);
+            var element= document.getElementById("para")
+           if(x>200 && y<40){
+            element.style.backgroundColor="blue";
+            element.style.padding="20px";
+            element.style.border="3px solid red"
+            element.style.borderRadius = "50px"
+            
+           } else {
+            document.getElementById("para").style.backgroundColor = "pink";
+            element.style.padding="20px";
+            element.style.border="3px solid red"
+            element.style.borderRadius = "50px"
+           }
+        }
+     </script>
+</body>
+</html>
