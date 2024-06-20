@@ -1,0 +1,17 @@
+import React from 'react'
+import Header from "./components/Header"
+import Contact from './components/Contact'
+var fName = "Adfar Rasheed"
+function App() {
+  return (
+    <div>
+      <h1>my name is {fName}</h1>
+      <Header/>
+      <Contact/>
+      <Contact/>
+    </div>
+  )
+}
+
+
+export default App
