@@ -15,3 +15,81 @@ function App() {
 
 
 export default App
+
+
+//themechanger
+import React, { useState } from 'react'
+
+export default function ThemeChange() {
+    // const [color,setColor] = useState("white");
+    // const [text,setText] = useState("DARK");
+    const [condition,setCondition] = useState(true)
+    function handleColor(){
+        setCondition(!condition)
+        // if(condition===true){
+        //     setCondition(false)
+        // } else{
+        //     setCondition(true)
+        // }
+    //    if(color === "white"){
+    //     setColor("black")
+    //     setText("LIGHT")
+    //    } else{
+    //     setColor("white")
+    //     setText("DARK")
+    //    }
+    }
+  return (
+    <div style={{width:"100vw",backgroundColor:condition?"white":"black",height:"70vh",border:"2px solid red"}}>
+      <button onClick={handleColor}>{condition ? "DARK" : "LIGHT"}</button>
+
+    </div>
+  )
+}
+
+
+//conditional rendering 
+import React, { useState } from 'react'
+import Condiotion from './components/Condiotion';
+
+export default function App() {
+  const [count,setCount] = useState(0);
+  const allow =true;
+  function handleIncrement(){
+    setCount(count + 1);
+  }
+  return (
+    <div>
+      <h1>{count}</h1>
+      {allow?<h1>True hain</h1>:<h1>False hain</h1>}
+      {!allow? <Condiotion/>:""}
+      {allow && <h1>Newton school</h1>}
+      <button onClick={handleIncrement}>Add one</button>
+    </div>
+  )
+}
+
+//state depending on previous stateimport React, { useState } from 'react'
+
+export default function App() {
+  const [count,setCount] =useState(0)
+  function handleIncrement(){
+    // setCount(count+1);
+    // setCount(count+1);
+    // setCount(count+1);
+    // setCount(count+1);
+    // setCount((prev)=>prev+1)
+    // setCount((prev)=>prev+1)
+    // setCount((prev)=>prev+1)
+    // setCount((prev)=>prev+1)
+    setCount(count+1)
+    setCount((prev)=>prev+1)
+    setCount(count+1)
+  }
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={handleIncrement}>Add one</button>
+    </div>
+  )
+}
