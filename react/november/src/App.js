@@ -1,51 +1,34 @@
 import React from 'react'
 
 export default function App() {
-  // const numbers = [1,2,3,3,4,5,6]
-  const data = [
-    ["Adfar","Rasheed","Jenny","Anjali"],
-    ["HTML","CSS","JS","React"],
-    ["1","2","3","4"]
-  ]
-  // const arr = numbers.map((item,index)=>{
-  //     return <li>{item}</li>
-  // // })
-  // console.log(arr);
-  const main = [
-    {name:'Adfar',skill:"html",rating:1},
-    {name:'Rasheed',skill:"Css",rating:2},
-    {name:'Jenny',skill:"JS",rating:3},
-    {name:'Anjali',skill:"react",rating:4},
-  ]
+  var fName = "Adfarrrr"
   return (
     <div>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Skill</th>
-          <th>Rating</th>
-        </tr>
-        {main.map((item,index)=>{
-          return (
-            <tr>
-              <td>{item.name}</td>
-              <td>{item.skill}</td>
-              <td>{item.rating}</td>
-            </tr>
-          )
-        })}
-      </table>
-      <ul>
-       {/* {numbers.map((item,index)=>{
-          return <li key={index}>{item}</li>
-       })} */}
-       {/* <p>{data.map((item=><p key={item}>{item}</p>))}</p> */}
-       {data.map((item,index)=>{
-           return item.map((list,index)=>{
-            return <li key={index}>{list}</li>
-           })
-       })}
-      </ul>
+      <h1 >App Parent</h1>
+      <Children firstName={fName} salary="Rs4000" skill = {[1,2,3,4]} age = {34}/>
+      {/* <Children firstName="Ankit" salary="Rs2000" age={44} /> */}
+    </div>
+  )
+}
+function Children(props){
+  console.log("props: " ,props)
+  return (
+    <div>
+      {props.skill.map((item,index)=>{
+        return <h1 key={index}>{item}</h1>
+      })}
+      <h1>Children </h1>
+      {/* <p>My First Name is {props.firstName}, my age is {props.age}, and my salary is {props.salary}</p> */}
+      <Grandchildren fName={props.firstName} sal={props.salary} umar={props.age}/>
+    </div>
+  )
+}
+function Grandchildren(props){
+  console.log("p",props)
+  return (
+    <div>
+      <mark>{props.fName} {props.sal} {props.umar}</mark>
+      <h1>Grand Children</h1>
     </div>
   )
 }

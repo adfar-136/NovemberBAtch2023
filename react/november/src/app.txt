@@ -93,3 +93,27 @@ export default function App() {
     </div>
   )
 }
+
+//List rendering
+
+import React, { useState } from 'react'
+
+export default function App() {
+  const [count,setCount] = useState(0)
+  function handleIncrement(){
+    setCount(count+1);
+  }
+  var data = ["HTML","CSS","JS","React","HTML","CSS","JS","React"]
+  return (
+    <div>
+      <ul>
+        {data.map((item,index)=>{
+          return <li key={index}>{item}</li>
+        })}
+      </ul>
+      <h1>Hello World!</h1>
+      <h1>{count}</h1>
+      <button onClick={handleIncrement}>increment</button>
+    </div>
+  )
+}
