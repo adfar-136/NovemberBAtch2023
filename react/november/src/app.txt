@@ -117,3 +117,91 @@ export default function App() {
     </div>
   )
 }
+
+
+//props
+import React from 'react'
+
+export default function App() {
+  var fName = "Adfarrrr"
+  return (
+    <div>
+      <h1 >App Parent</h1>
+      <Children firstName={fName} salary="Rs4000" skill = {[1,2,3,4]} age = {34}/>
+      {/* <Children firstName="Ankit" salary="Rs2000" age={44} /> */}
+    </div>
+  )
+}
+function Children(props){
+  console.log("props: " ,props)
+  return (
+    <div>
+      {props.skill.map((item,index)=>{
+        return <h1 key={index}>{item}</h1>
+      })}
+      <h1>Children </h1>
+      {/* <p>My First Name is {props.firstName}, my age is {props.age}, and my salary is {props.salary}</p> */}
+      <Grandchildren fName={props.firstName} sal={props.salary} umar={props.age}/>
+    </div>
+  )
+}
+function Grandchildren(props){
+  console.log("p",props)
+  return (
+    <div>
+      <mark>{props.fName} {props.sal} {props.umar}</mark>
+      <h1>Grand Children</h1>
+    </div>
+  )
+}
+
+//Children
+import React from 'react'
+
+export default function Component({children}) {
+  return (
+    <div>
+        {children}
+        <h1>Hello component</h1>
+        {children}
+        
+    </div>
+  )
+}
+
+
+//conditional rendering
+import React, { useState } from 'react'
+import "./App.css"
+export default function App() {
+  const [allow,setAllow] = useState(false)
+  const [clas,setClas] = useState("main") 
+ 
+  return (
+    <>
+     {!allow? <Comp1/>:<Comp2/>}
+     {/* {allow && (
+      <Comp1/>
+     )} */}
+     <button onClick={()=>setAllow(!allow)}>Show</button>
+     <div className={clas}>
+      <h1>hello</h1>
+      <button onClick={()=>setClas("container")}>container</button>
+      <button onClick={()=>setClas("main")}>main</button>
+     </div>
+    </>
+  )
+}
+function Comp1(){
+  return (
+    <>
+     <h1>Component1</h1>
+    </>
+  )
+}
+function Comp2(){
+  return (
+    <>
+     <h1>Component2</h1></>
+  )
+}

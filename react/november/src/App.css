@@ -1,0 +1,10 @@
+.main{
+    background-color: cadetblue;
+    padding: 35px;
+    border-radius: 25px;
+}
+.container{
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 10px;
+}
