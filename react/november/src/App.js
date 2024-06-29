@@ -1,42 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function App() {
-  const [allow,setAllow] = useState(false)
-  const [input,setInput] = useState({
-    name: '',
-    age:'',
-    email: '',
-  })
-  function handleSubmit(e){
-     e.preventDefault()
-     setAllow(true)
+  
+  const [count,setCount] = useState(0)
+  const [number,setNumber] = useState(100)
+  const [number1,setNumber1] = useState(1000)
+  useEffect(()=>{
+    console.log("useEffect")
+    // const fun =()=>{
+    //   console.log("adfar")
+    // }
+    // document.addEventListener("click",fun)
+    // return ()=>{
+    //   document.removeEventListener("click",fun)
+    // }
+   let interval =  setInterval(()=>{
+    console.log("Adfar")
+  },3000)
+  return ()=>{
+    clearInterval(interval)
   }
+  })
   return (
     <div>
-      <h1>State Management</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder='name' 
-        value={input.name} 
-        onChange={(e)=>setInput((prev)=>({...prev,name:e.target.value}))}
-        />
-        <br />
-        <input type="text" placeholder='age' 
-         value={input.age} 
-         onChange={(e)=>setInput((prev)=>({...prev,age:e.target.value}))}
-        /><br />
-        <input type="text" placeholder='email' 
-         value={input.email}
-         onChange={(e)=>setInput((prev)=>({...prev,email:e.target.value}))}
-        /><br />
-        <input type="submit" value="Login" />
-      </form>
-      {allow ? (
-        <>
-         <h1>{input.name}</h1>
-         <h1>{input.age}</h1>
-         <h1>{input.email}</h1>
-        </>
-      ):""}
+       <h1>count: {count}</h1>
+       <button onClick={()=>setCount(count+1)}>Increment</button>
+       <h1>Number: {number}</h1>
+       <button onClick={()=>setNumber(number-1)}>Decrement</button>
+       <h1>Number1: {number1}</h1>
+       <button onClick={()=>setNumber1(number1+10)}>Decrement</button>
     </div>
   )
 }
