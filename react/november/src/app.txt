@@ -378,4 +378,96 @@ export default function App() {
 }
 
 
-//async await
+//pokemon app.js code 
+import React, { useEffect, useState } from 'react'
+import "./App.css"
+import PokeThumbnail from './PokeThumbnail'
+export default function App() {
+  const [allPokemons,setAllPokemons] = useState([])
+  const [loadMore,setLoadMore] = useState({})
+  useEffect(()=>{
+     getAllPokemons()
+  },[])
+  const getAllPokemons =async()=>{
+    const res =await fetch("https://content.newtonschool.co/v1/pr/64ccef982071a9ad01d36ff6/pokemonspages1")
+    const data =await res.json()
+    
+    setLoadMore(data[0].next)
+    
+    function createPokeMonObject(result){
+      result.forEach(async (pokemon)=>{
+           const res =await fetch(pokemon.url);
+           const dataa =await res.json();
+           setAllPokemons(prev=>([...prev, dataa]))
+           
+      })
+    }
+    createPokeMonObject(data[0].results)
+ 
+  }
+  async function getMoreData(){
+    const res =await fetch(loadMore);
+    const data =await res.json();
+    setLoadMore(data[0].next)
+    
+    function createPokeMonObject(result){
+      result.forEach(async (pokemon)=>{
+         
+           const res =await fetch(pokemon.url);
+           const dataa =await res.json();
+           setAllPokemons(prev=>([...prev, dataa]))
+           
+      })
+    }
+    createPokeMonObject(data[0].results)
+    
+  }
+  return (
+    <div id='parent'>
+      <div id='section'>
+        <div className="content">
+            <h2>Pokemon</h2>
+            <h2>Pokemon</h2>
+        </div>
+        <div className="content2">
+            <h2>Kingdom</h2>
+            <h2>Kingdom</h2>
+        </div>
+      </div>
+      <div className="app-container">
+        <div className="pokemon-container">
+            <div className="all-container">
+              {allPokemons.map((pokemon,index)=>{
+                console.log(pokemon)
+                return  <PokeThumbnail
+             
+                key={index}
+                id={pokemon[0].id}
+                name={pokemon[0].name}
+                image={pokemon[0].image}
+                type={pokemon[0].type}
+                height={pokemon[0].height}
+                weight={pokemon[0].weight}
+                stat1={pokemon[0].stats[0].stat.name}
+                stat2={pokemon[0].stats[1].stat.name}
+                stat3={pokemon[0].stats[2].stat.name}
+                stat4={pokemon[0].stats[3].stat.name}
+                stat5={pokemon[0].stats[4].stat.name}
+                stat6={pokemon[0].stats[5].stat.name}
+                bs1={pokemon[0].stats[0].base_stat}
+                bs2={pokemon[0].stats[1].base_stat}
+                bs3={pokemon[0].stats[2].base_stat}
+                bs4={pokemon[0].stats[3].base_stat}
+                bs5={pokemon[0].stats[4].base_stat}
+                bs6={pokemon[0].stats[5].base_stat}
+                />
+              }
+             )}
+            </div>
+            <button className='load-more' onClick={()=>getMoreData()}>More Pokemons</button>
+        </div>
+      </div>
+
+    </div>
+  )
+}
