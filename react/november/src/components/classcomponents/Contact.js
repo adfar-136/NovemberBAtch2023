@@ -54,8 +54,6 @@ export default class Contact extends Component {
     )
   }
 }
-
-
 class Hello extends Component{
     componentDidMount(){
         console.log("Mounting")
