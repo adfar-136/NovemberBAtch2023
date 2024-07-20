@@ -1,11 +1,9 @@
 import React from 'react'
 
-
-export default function Blogs() {
+export default function blogpage() {
   return (
     <div>
-        <h1>Blogs</h1>
-     
+        <h1>Blog Page</h1>
     </div>
   )
 }

@@ -1,11 +1,9 @@
 import React from 'react'
 
-
-export default function Blogs() {
+export default function Cshop() {
   return (
     <div>
-        <h1>Blogs</h1>
-     
+        <h1>Cshop</h1>
     </div>
   )
 }
