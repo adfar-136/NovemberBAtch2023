@@ -527,3 +527,23 @@ export default function App() {
     </>
   )
 }
+//context api 
+import React, { createContext } from 'react'
+import Comp1 from './components/contextapi/Comp1'
+const fName = createContext()
+const lName = createContext()
+export default function App() {
+  return (
+    <div>
+      <fName.Provider value="Adfar Rasheed">
+        <lName.Provider value="Dar">
+          <Comp1 />
+        </lName.Provider>
+      </fName.Provider>
+    </div>
+  )
+}
+export {fName,lName}
+
+
+//themtoggle context 
