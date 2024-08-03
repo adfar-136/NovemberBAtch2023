@@ -631,3 +631,151 @@ export default function App() {
     </div>
   )
 }
+
+
+//pomodoro 
+import React, { useEffect, useState } from 'react'
+
+export default function App() {
+    const [workDuration,setWorkduration] = useState(25)
+    const [breakDuration,setBreakduration] = useState(5)
+    const [worksecond,setWorksecond] = useState(5)
+    const [breaksecond,setBreaksecond] = useState(3)
+    const [type,setType]= useState("Work")
+    const [flag,setFlag] = useState(false)
+    const [resetFlag,setResetFlag] = useState(true)
+    useEffect(()=>{
+         if(flag && type==="Work"){
+            if(worksecond>0){
+                setTimeout(()=>{
+                    setWorksecond(worksecond-1)
+                },1000)
+            }
+            if(worksecond === 0){
+                alert('work duration completed')
+                setType("Break")
+                setWorksecond(1500)
+            }
+         }
+         if(flag && type==="Break"){
+            if(breaksecond>0){
+                setTimeout(()=>{
+                    setBreaksecond(breaksecond-1)
+                },1000)
+            }
+            if(breaksecond===0){
+                alert('break duration completed')
+                setType("Work")
+                setBreaksecond(300)
+            }
+         }
+
+    },[type,worksecond,flag,breaksecond])
+    function handleSubmit(e){
+       e.preventDefault()
+       setWorksecond(workDuration*60)
+       setBreaksecond(breakDuration*60)
+       setType("Work")
+       setFlag(false)
+    }
+    const convertor=(sec)=>{
+       let m = parseInt(sec/60).toString()
+       let s = parseInt(sec%60).toString()
+       if(m.length === 1) m="0"+m;
+       if(s.length === 1) s="0"+s;
+       return m+":"+s
+    }
+    function handleReset(){
+        setResetFlag(true)
+        setBreaksecond(300)
+        setWorksecond(1500)
+        setFlag(false)
+        setType("Work")
+        setBreakduration(5)
+        setWorkduration(25)
+    }
+  return (
+    <div>
+        <div>
+            <h1>{type==="Work"?convertor(worksecond):convertor(breaksecond)}</h1>
+            <h1>{type==="Work"?"Work":"Break"}-Time</h1>
+        </div>
+        <div>
+            <button onClick={()=>{
+                setFlag(true);
+                setResetFlag(false)
+            }} disabled={flag}>Start</button>
+            <button onClick={()=>{
+                setFlag(false);
+                setResetFlag(false)
+            }} disabled={!flag}>Stop</button>
+            <button disabled={resetFlag} onClick={handleReset}>Reset</button>
+        </div> <br /><br />
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type="number" placeholder='Work Duration'
+                value={workDuration} onChange={(e)=>setWorkduration(e.target.value)}/>
+                <input type="number" placeholder='Break Duration'
+                value={breakDuration} onChange={(e)=>setBreakduration(e.target.value)}/>
+                <input type="submit" value="Set" />
+            </form>
+        </div>
+    </div>
+
+  )
+}
+
+
+//useMemo simple example 
+import React, { useMemo, useState } from 'react'
+
+export default function App() {
+  const [count,setCount] = useState(0)
+  const [number,setNumber] = useState(100)
+  const isEven = useMemo(()=>{
+    let i=0;
+    while(i<2000000000) i++;
+    return count%2===0
+  },[count])
+  return (
+    <div>
+        <h1>Count:{count}</h1>
+        <button onClick={()=>setCount(count+1)}>+count</button>
+         <h1>{isEven?"EVEN":"ODD"}</h1>
+        <h1>Number:{number}</h1>
+        <button onClick={()=>setNumber(number-1)}>-Number</button>
+    </div>
+  )
+}
+
+
+usememo todo 
+
+import React, { useState } from 'react'
+import TodoList from './components/Efficiency/TodoList'
+import { createTodos } from './components/Efficiency/utilities'
+const todos = createTodos()
+export default function App() {
+  const [tab,setTab] = useState('all')
+  const [isDark,setIsDark] = useState(false)
+  return (
+    <div>
+      <button onClick={()=>setTab('all')}>All</button>
+      <button onClick={()=>setTab('active')}>Active</button>
+      <button onClick={()=>setTab('completed')}>Completed</button>
+      <br />
+      <br />
+      <label>
+        <input type="checkbox" 
+        checked={isDark}
+        onChange={(e)=>setIsDark(e.target.checked)}/>
+        Dark Mode
+      </label>
+      <TodoList 
+      todos={todos}
+      tab={tab}
+      theme={isDark?'dark':'light'}
+      />
+    </div>
+  )
+}
