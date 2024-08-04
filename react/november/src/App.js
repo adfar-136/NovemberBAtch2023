@@ -1,33 +1,38 @@
-import React, { useCallback, useState } from 'react'
-const x = new Set()
+import React, { useState } from 'react'
+
 export default function App() {
-  const [count,setCount]  = useState(0)
-  const [number,setNumber] = useState(10)
-  const incrementCount=useCallback(()=>{
-    setCount(count+1)
-  },[count])
-  const decrementCount=useCallback(()=>{
-    setCount(count-1)
-  },[count])
-  const incrementNumber=useCallback(()=>{
-    setNumber(number+1)
-  },[number])
-  const decrementNumber=useCallback(()=>{
-    setNumber(number-1)
-  },[number])
-  x.add(incrementCount)
-  x.add(decrementCount)
-  x.add(incrementNumber)
-  x.add(decrementNumber)
-  alert(x.size)
+  const [email,setEmail] = useState("")
+  const [password,setPasswor] = useState("")
+  const [data,setData] = useState("")
+  function handleSubmit(e){
+       e.preventDefault()
+       const user ={email,password}
+       localStorage.setItem("user",JSON.stringify(user))
+      // //  localStorage.setItem("user",JSON.stringify({email,password}))
+      //  localStorage.setItem("email",email);
+      //  localStorage.setItem("password",password)
+  }
+  function getData(){
+    const data = JSON.parse(localStorage.getItem("user"));
+    setData(data)
+  }
+  function handleRemove(){
+    // localStorage.removeItem("user")
+    localStorage.clear()
+  }
+  console.log(data)
   return (
     <div>
-      <h1>Count:{count}</h1>
-      <button onClick={incrementCount}>+count</button>
-      <button onClick={decrementCount}>-count</button>
-      <h1>number:{number}</h1>
-      <button onClick={incrementNumber}>+NUmber</button>
-      <button onClick={decrementNumber}>-Number</button>
+      <form onSubmit={handleSubmit}>
+        <input type="email" placeholder='Enter Email' 
+        value={email} onChange={(e)=>setEmail(e.target.value)}/>
+        <input type="password" placeholder="Enter Passord" 
+        value={password} onChange={(e)=>setPasswor(e.target.value)}/>
+        <button type="submit">Save</button>
+      </form>
+      <button onClick={getData}>Get Data</button>
+      <h1>{data.email} {data.password}</h1>
+      <button onClick={handleRemove}>Remove</button>
     </div>
   )
 }
