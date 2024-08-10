@@ -1,27 +1,23 @@
-import React, { useState } from 'react'
-import ErrorBoundary from './components/Efficiency/ErrorBoundary/ErrorBoundary'
-import Counterrrr from './components/Efficiency/ErrorBoundary/Counterrrr'
-import Counter from './components/CustomHoooks/Counter'
-
+import React from 'react'
+import Countt from './Countt'
+import { useDispatch, useSelector } from 'react-redux'
+import {setBgColor} from "./components/ReduxStore/actions"
+import TodoRedux from './TodoRedux'
 export default function App() {
-  const [count,setCount] = useState(0)
+  const color = useSelector((state)=>state.color)
+  const dispatch = useDispatch()
+  // console.log(color.background)
   return (
-    <div>
-      <h1>Adfar Sahab</h1> <h1>Adfar Sahab</h1>
-      <h1>App counter: {count}</h1>
-      <button onClick={()=>setCount(count+1)}>App Incrementer</button>
-      <ErrorBoundary>
-        <Counterrrr/>
-        <Counter/>
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <Counterrrr/>
-        <Counter/>
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <Counterrrr/>
-        <Counter/>
-      </ErrorBoundary>
+    <div style={{backgroundColor:color.background}}>
+      <Countt/>
+      <button onClick={()=>dispatch(setBgColor("blue"))}>Blue</button>
+      <button onClick={()=>dispatch(setBgColor("yellow"))}>Yellow</button>
+      <button onClick={()=>dispatch(setBgColor("purple"))}>Purple</button>
+      <button onClick={()=>dispatch(setBgColor("gray"))}>Gray</button>
+      <button onClick={()=>dispatch(setBgColor("pink"))}>Pink</button>
+      <button onClick={()=>dispatch(setBgColor("Orange"))}>Orange</button>
+      <br /><br />
+      <TodoRedux/>
     </div>
   )
 }
