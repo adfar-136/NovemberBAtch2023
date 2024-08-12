@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+    <script>
+        var main = document.querySelector("#main")
+        main.innerText = "<h1>hello</h1>";
+     //   var h1 = document.createElement("h1")
+    ///    h1.innerHTML ='hello'
+    //    main.appendChild(h1)
+    function outer(){
+        var a=10
+        function inner(){
+           
+           console.log(a);
+        }
+        inner()
+    }
+    outer()
+    </script>
+</body>
+</html>
