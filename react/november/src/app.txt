@@ -907,3 +907,47 @@ export default function App() {
     </div>
   )
 }
+
+
+//redux 
+import React from 'react'
+import Countt from './Countt'
+import { useDispatch, useSelector } from 'react-redux'
+import {setBgColor} from "./components/ReduxStore/actions"
+import TodoRedux from './TodoRedux'
+export default function App() {
+  const color = useSelector((state)=>state.color)
+  const dispatch = useDispatch()
+  // console.log(color.background)
+  return (
+    <div style={{backgroundColor:color.background}}>
+      <Countt/>
+      <button onClick={()=>dispatch(setBgColor("blue"))}>Blue</button>
+      <button onClick={()=>dispatch(setBgColor("yellow"))}>Yellow</button>
+      <button onClick={()=>dispatch(setBgColor("purple"))}>Purple</button>
+      <button onClick={()=>dispatch(setBgColor("gray"))}>Gray</button>
+      <button onClick={()=>dispatch(setBgColor("pink"))}>Pink</button>
+      <button onClick={()=>dispatch(setBgColor("Orange"))}>Orange</button>
+      <br /><br />
+      <TodoRedux/>
+    </div>
+  )
+}
+
+
+//thunk 
+
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { incrementStore,decrementStore } from './components/Thunkstore/action'  A       S A    A Q                                                                                                                                                                                              
+export default function App() {
+  const count =                                                                                                                                                                                                                             ((state)=>state)
+  const dispatch = useDispatch()
+  return (
+    <div>
+       <h1>Count: {count}</h1>
+       <button onClick={()=>dispatch(incrementStore(1000))}>+++++</button>
+       <button onClick={()=>dispatch(decrementStore(3000))}>----</button>
+    </div>
+  )
+}
