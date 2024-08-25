@@ -1,25 +1,16 @@
 var express = require("express")
-var fs = require("fs")
-var file = fs.readFileSync("./public/index.html")
+var path = require("path")
+var staticPath = path.join(__dirname,"public")
 const app = express()
+app.use(express.static(staticPath))
+// console.log(staticPath)
 app.get("/",(req,res)=>{
-     res.write("<h1>Home main page</h1>")
-     res.write("<h1>Home main page</h1>")
-     res.write("<h1>Home main page</h1>")
-     res.write("<h1>Home main page</h1>")
-     res.send()
+    res.sendFile(path.join(__dirname,"public","index.html"))
 })
 app.get("/about",(req,res)=>{
-    res.write("<h1>About us</h1>")
-    res.send()
+    res.sendFile(path.join(__dirname,"public","about.html"))
 })
-app.get("/contact",(req,res)=>{
-    res.write("<h1>Contact us</h1>")
-    res.send()
+app.listen(3001,()=>{
+    console.log("server is running at 3001 port")
 })
-app.get("/api/students",(req,res)=>{
-res.end(file)
-})
-app.listen(3000,()=>{
-    console.log("server is running on port 3000")
-})
+// console.log(__dirname)
